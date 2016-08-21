@@ -1,4 +1,4 @@
-%{"Elixir.Db": {:git, "git://github.com/chwevans/db.git", "44e45c1b24d213b42689611ea13399a0805a70f1", []},
+%{"Elixir.Db": {:git, "git://github.com/chwevans/db.git", "a4782e4eb5061bf082de6629dcedc262b86f2c9b", []},
   "certifi": {:hex, :certifi, "0.4.0", "a7966efb868b179023618d29a407548f70c52466bf1849b9e8ebd0e34b7ea11f", [:rebar3], []},
   "excoveralls": {:hex, :excoveralls, "0.5.5", "d97b6fc7aa59c5f04f2fa7ec40fc0b7555ceea2a5f7e7c442aad98ddd7f79002", [:mix], [{:exjsx, "~> 3.0", [hex: :exjsx, optional: false]}, {:hackney, ">= 0.12.0", [hex: :hackney, optional: false]}]},
   "exjsx": {:hex, :exjsx, "3.2.0", "7136cc739ace295fc74c378f33699e5145bead4fdc1b4799822d0287489136fb", [:mix], [{:jsx, "~> 2.6.2", [hex: :jsx, optional: false]}]},

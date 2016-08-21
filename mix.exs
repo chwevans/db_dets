@@ -8,6 +8,8 @@ defmodule DbDets.Mixfile do
       elixir: "~> 1.2",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
+      consolidate_protocols: Mix.env == :prod,
+      test_coverage: [tool: ExCoveralls],
       deps: deps
     ]
   end

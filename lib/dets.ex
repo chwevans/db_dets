@@ -25,12 +25,6 @@ defmodule Db.Dets do
     {:reply, reply, tid}
   end
 
-  def terminate(_reason, tid) do
-    # TODO: GHI:1 This isn't currently being called, but should be handled when clean node shutdown is implemented
-    Logger.info("Shutting down #{inspect __MODULE__}, closing dets")
-    :ok = :dets.close(tid)
-  end
-
   defp ets_key(keyspace, key), do: {keyspace, key}
 
   defp handle(%Db.Dets{keyspace: keyspace, query: {:lookup, key}}, tid) do
@@ -48,6 +42,12 @@ defmodule Db.Dets do
   defp handle(%Db.Dets{keyspace: keyspace, query: {:delete, key}}, tid) do
     :ok = :dets.delete(tid, ets_key(keyspace, key))
     :ok = :dets.sync(tid)
+    :ok
+  end
+
+  defp handle(%Db.Dets{query: :flush}, tid) do
+    :ok = :dets.delete_all_objects(tid)
+    :dets.sync(tid)
     :ok
   end
 
