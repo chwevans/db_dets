@@ -1,6 +1,8 @@
 # DbDets
 
-A plugin for DB implementing a connector to DETS
+A plugin for DB implementing a connector to DETS.
+
+This implements Db.Backend defined in https://github.com/chwevans/db.
 
 ## Installation
 
